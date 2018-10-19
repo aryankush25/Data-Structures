@@ -1,5 +1,3 @@
-package infix_to_postfix;
-
 class Final
 {
     public static boolean isChar(char s)
