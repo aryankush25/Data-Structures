@@ -1,4 +1,4 @@
-import java.util.*;
+package infix_to_postfix;
 
 public interface Stack<T> {
     int size();

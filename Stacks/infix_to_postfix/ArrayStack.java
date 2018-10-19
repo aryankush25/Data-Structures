@@ -1,4 +1,4 @@
-import java.util.*;
+package infix_to_postfix;
 
 public class ArrayStack <T> implements Stack <T>
 {
