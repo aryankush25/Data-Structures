@@ -8,13 +8,14 @@ class Final
         }
         return false;
     }
+
     public static void main(String[] args)
     {
-        Stack<String> s = new ArrayStack<String>();
+        Stack<String> s = new ArrayStack<>();
 
-        String prefix = "*-A/BC-/AKL", infix = "";
+        String prefix = "*-A/BC-/AKL", postfix = "";
 
-        for(int i = prefix.length() - 1; i >=0; i--)
+        for(int i = prefix.length() - 1; i >= 0; i--)
         {
             Character c = prefix.charAt(i);
             if(isChar(c))
@@ -23,12 +24,11 @@ class Final
             }
             else
             {
-                String temp = "(";
-                
+                String temp = "";
+
+                temp += s.pop();
                 temp += s.pop();
                 temp += c.toString();
-                temp += s.pop();
-                temp += ')';
 
                 s.push(temp);
             }
@@ -36,9 +36,9 @@ class Final
 
         while(!s.isEmpty())
         {
-            infix += s.pop();
+            postfix += s.pop();
         }
 
-        System.out.println(infix);
+        System.out.println(postfix);
     }
 }
