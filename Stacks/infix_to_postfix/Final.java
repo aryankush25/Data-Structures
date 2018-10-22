@@ -6,7 +6,7 @@ class Final
             return true;
         return false;
     }
-    
+
     public static int precedence(char s)
     {
     	if(s == '^')
@@ -17,10 +17,10 @@ class Final
     		return 1;
     	else if(s == '(' || s == ')')
     		return 0;
-    	
+
     	return -1;
     }
-    
+
     public static void main(String[] args) {
         Stack<Character> s = new ArrayStack<Character>();
 
@@ -32,7 +32,7 @@ class Final
                 postfix = postfix + infix.charAt(i);
             }
             else
-            {   
+            {
                 if(s.isEmpty())
                 {
                 	s.push(infix.charAt(i));
@@ -41,7 +41,7 @@ class Final
                 {
                 	int x = precedence(infix.charAt(i));
                 	int y = precedence(s.peek());
-                	
+
                 	if(x == 0)
                 	{
                 		if(infix.charAt(i) == '(')
@@ -72,11 +72,11 @@ class Final
             	            	break;
             	            y = precedence(s.peek());
             	        }
-            			
+
                 		s.push(infix.charAt(i));
                 	}
                 }
-                
+
             }
         }
 
@@ -84,7 +84,7 @@ class Final
         {
             postfix = postfix + s.pop();
         }
-        
+
         System.out.println(postfix);
     }
 }
