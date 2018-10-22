@@ -28,4 +28,5 @@ public class LinkedStack<T> implements Stack<T>
     {
         stack.addAtFirst(t);
     }
+
 }
