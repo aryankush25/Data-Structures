@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-class DeleteKElements
+class ReverseKElements
 {
     static void reverseK(ArrayQueue<Integer> queue, Integer k)
     {
