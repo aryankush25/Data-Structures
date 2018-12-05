@@ -32,6 +32,24 @@ Node* insert(Node* root, int value)
     return root;
 }
 
+int minimum(Node* root)
+{
+    if (root->left == NULL) {
+        return root->value;
+    } else {
+        return minimum(root->left);
+    }
+}
+
+int maximum(Node* root)
+{
+    if (root->right == NULL) {
+        return root->value;
+    } else {
+        return maximum(root->right);
+    }
+}
+
 void display(Node* root)
 {
     if (root == NULL) {
@@ -47,13 +65,16 @@ int main() {
 
     Node* root = NULL;
 
-    root = insert(root, 5);
-    root = insert(root, 10);
-    root = insert(root, 1);
-    root = insert(root, 3);
-    root = insert(root, 12);
+    root = insert(root, 300);
+    root = insert(root, 300);
+    root = insert(root, 300);
+    root = insert(root, 300);
+    root = insert(root, 300);
     root = insert(root, 100);
-    
+
+    cout<< minimum(root) << endl;
+    cout<< maximum(root) << endl;
+
     display(root);
 
     return 0;
