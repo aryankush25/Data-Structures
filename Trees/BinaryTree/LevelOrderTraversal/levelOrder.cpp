@@ -29,7 +29,7 @@ void addToQueue(queue<Node*> q)
 
     printf("%c ", temp->value);
 
-    if (temp->left != NULL) {
+    if (temp->left) {
         q.push(temp->left);
     }
     if (temp->right != NULL) {
