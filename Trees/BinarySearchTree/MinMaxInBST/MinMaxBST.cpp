@@ -34,6 +34,9 @@ Node* insert(Node* root, int value)
 
 int minimum(Node* root)
 {
+    if (root == NULL) {
+        return -1;
+    }
     if (root->left == NULL) {
         return root->value;
     } else {
@@ -43,6 +46,9 @@ int minimum(Node* root)
 
 int maximum(Node* root)
 {
+    if (root == NULL) {
+        return -1;
+    }
     if (root->right == NULL) {
         return root->value;
     } else {
