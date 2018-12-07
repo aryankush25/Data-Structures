@@ -112,11 +112,15 @@ int main()
 
     // isBSTinRange() Function is more Efficient
 
-    if (isBSTinRange(root, 0, 122)) {
+    if (isBSTinRange(root, CHAR_MIN, CHAR_MAX)) {
         cout<< "Is a BST\n";
     } else {
         cout<< "Is Not a BST\n";
     }
+
+    // std::cout << CHAR_MIN << " - " << CHAR_MAX << '\n';
+    // std::cout << INT_MIN << " - " << INT_MAX << '\n';
+    // std::cout << LONG_MIN << " - " << LONG_MAX << '\n';
 
     printf("Inorder - ");
     printInOrder(root);
