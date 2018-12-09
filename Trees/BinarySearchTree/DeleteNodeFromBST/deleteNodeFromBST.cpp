@@ -61,7 +61,6 @@ Node* deleteNode(Node *root, int key)
     if (root == NULL) {
         return root;
     }
-
     if (root->value == key) {
         if (root->left == NULL && root->right == NULL) {
             delete root;
@@ -79,8 +78,13 @@ Node* deleteNode(Node *root, int key)
         }
         else {
             Node* minRight = minimum(root->right);
-            root->value = minRight->value;
+
             root->right = deleteNode(root->right, minRight->value);
+
+            minRight->right = root->right;
+            minRight->left = root->left;
+
+            root = minRight;
         }
     }
     else if (root->value < key) {
